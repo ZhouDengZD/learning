@@ -79,6 +79,9 @@
 
 5. wget 用于远程下载：wget [options] [URL地址]
 
+6. netstat [-acCeFghilMnNoprstuvVwx] [-A<网络类型>] [--ip] 显示网络状态
+ 查看443端口是否启动(状态为listen): netstat -tunlp | grep 443 或 netstat -apn | grep 443
+
 #### 五、权限相关操作
 1. chomd 控制文件如何被用户调用：chmod [-cfvR] [--help] [--version] mode file...
 ```
