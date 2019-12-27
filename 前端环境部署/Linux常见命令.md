@@ -80,7 +80,7 @@
 5. wget 用于远程下载：wget [options] [URL地址]
 
 6. netstat [-acCeFghilMnNoprstuvVwx] [-A<网络类型>] [--ip] 显示网络状态
- 查看443端口是否启动(状态为listen): netstat -tunlp | grep 443 或 netstat -apn | grep 443
+ 查看443端口: netstat -tunlp | grep 443 或 netstat -apn | grep 443
 
 #### 五、权限相关操作
 1. chomd 控制文件如何被用户调用：chmod [-cfvR] [--help] [--version] mode file...
@@ -140,7 +140,22 @@ which会在PATH变量指定的路径中，搜索某个系统命令的位置，�
 -V 　显示版本信息
 ```
 
-#### 七、其他
+#### 七、firewalld防火墙相关
+1. 查看firewalld服务状态：systemctl status firewalld （active或者inactive）
+2. 查看firewall的状态：firewall-cmd --state
+3. 开启、重启、关闭、firewalld.service服务：service firewalld start/restart/stop
+4. 查看防火墙规则：firewall-cmd --list-all 
+5. 查询端口是否开放：firewall-cmd --query-port=8080/tcp
+6. 开放80端口：firewall-cmd --permanent --add-port=80/tcp
+7. 移除端口：firewall-cmd --permanent --remove-port=8080/tcp
+8. 重启防火墙(修改配置后要重启防火墙)：firewall-cmd --reload
+
+参数解释：
+- firwall-cmd：是Linux提供的操作firewall的一个工具；
+- --permanent：表示设置为持久；
+- --add-port：标识添加的端口；
+
+#### 八、其他
 1. 管道 | 
 简单来说, Linux 中管道的作用是将上一个命令的输出作为下一个命令的输入, 像 pipe 一样将各个命令串联起来执行。
 
