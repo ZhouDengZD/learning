@@ -1,2 +1,2 @@
-# learning-before201912
-2019下半年学习记录
+# learning
+学习记录
